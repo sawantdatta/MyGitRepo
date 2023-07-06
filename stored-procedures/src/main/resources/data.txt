@@ -1,0 +1,23 @@
+use db_shopon;
+
+DELIMITER $$
+start transaction;
+
+CREATE PROCEDURE sp_getBlogById
+(
+IN v_blog_id INT,
+    OUT title VARCHAR(255),
+    OUT content varchar(255),
+    OUT id varchar(255)
+)
+BEGIN
+SELECT
+blo.title as title,
+        blo.content as content,
+        blo.id as id
+FROM
+blog AS blo
+       WHERE
+   blo.id = v_blog_id;
+END$$
+DELIMITER ;
