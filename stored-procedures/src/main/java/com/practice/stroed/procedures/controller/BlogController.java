@@ -55,6 +55,10 @@ public class BlogController {
 		return blogRespository.findByTitleContainingOrContentContaining(searchTerm, searchTerm);
 	}
 
+	/**
+	*  Method is used to create
+	*
+	**/
 	@PostMapping("/blog")
 	public Blog create(@RequestBody Map<String, String> body) {
 		String title = body.get("title");
@@ -62,6 +66,10 @@ public class BlogController {
 		return blogRespository.save(new Blog(title, content));
 	}
 
+	/**
+	*  Method is used to update
+	*
+	**/
 	@PutMapping("/blog/{id}")
 	public Blog update(@PathVariable String id, @RequestBody Map<String, String> body) {
 		int blogId = Integer.parseInt(id);
@@ -72,6 +80,11 @@ public class BlogController {
 		return blogRespository.save(blog.get());
 	}
 
+	
+	/**
+	*  Method is used to Delete
+	*
+	**/
 	@DeleteMapping("blog/{id}")
 	public boolean delete(@PathVariable String id) {
 		int blogId = Integer.parseInt(id);
@@ -79,6 +92,10 @@ public class BlogController {
 		return true;
 	}
 
+	/**
+	*  Method is used to getTitileByIdEntiy
+	*
+	**/
 	@GetMapping(path = "/getTitileByIdEntiy/{id}")
 	public List<String> getTitileByIdEntiy(@RequestParam("id") Integer id) {
 		return blogService.getTitileByIdEntiy(id);
