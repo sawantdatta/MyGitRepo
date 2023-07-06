@@ -3,7 +3,6 @@ package com.practice.stroed.procedures.controller;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.practice.stroed.procedures.entity.Blog;
 import com.practice.stroed.procedures.repo.BlogRespository;
 import com.practice.stroed.procedures.service.BlogService;
@@ -28,18 +26,29 @@ public class BlogController {
 	@Autowired
 	BlogService blogService;
 	
-
+	/**
+	*  Method is used to findAll
+	*
+	**/
 	@GetMapping("/blog")
 	public List<Blog> index() {
 		return blogRespository.findAll();
 	}
 
+	/**
+	*  Method is used to show by usingId
+	*
+	**/
 	@GetMapping("/blog/{id}")
 	public Optional<Blog> show(@PathVariable String id) {
 		int blogId = Integer.parseInt(id);
 		return blogRespository.findById(blogId);
 	}
 
+	/**
+	*  Method is used to search
+	*
+	**/
 	@PostMapping("/blog/search")
 	public List<Blog> search(@RequestBody Map<String, String> body) {
 		String searchTerm = body.get("text");
