@@ -14,7 +14,11 @@ public class BlogService {
 	
 	@Autowired
     BlogRespository  blogRespository;
-
+	/**
+	 * 
+	 * @param id
+	 * @return List<String>
+	 */
     @Transactional
     public List<String> getTitileByIdEntiy(int id){
         return blogRespository.getTitileByIdEntiy(id);
