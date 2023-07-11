@@ -13,7 +13,11 @@ Follow below steps:-
 8. Now change the spring.jpa.hibernate.ddl-auto=update
 9. Add some dummy data into the blog table by using Mysql workbench 8.0 CE
 10. Run Spring Boot application.
-11. Open postman 
+11. Open postman and give "http://localhost:8082/api/v1/getTitileByIdEntiy?id=1"
+    below output will seen
+    "A,B,1"
+
+    
 
 
 
