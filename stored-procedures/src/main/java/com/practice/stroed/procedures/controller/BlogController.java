@@ -96,7 +96,7 @@ public class BlogController {
 	*  Method is used to getTitileByIdEntiy
 	*
 	**/
-	@GetMapping(path = "/getTitileByIdEntiy/{id}")
+	@GetMapping(path = "/getTitileByIdEntiy")
 	public List<String> getTitileByIdEntiy(@RequestParam("id") Integer id) {
 		return blogService.getTitileByIdEntiy(id);
 	}
