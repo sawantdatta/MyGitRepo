@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class StoredProceduresApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(StoredProceduresApplication.class, args);
 	}
